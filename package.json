@@ -1,0 +1,52 @@
+{
+  "name": "json-translator",
+  "title": "JSON Translator",
+  "description": "Translate selected JSON key-value pair to other locale files.",
+  "icon": "command-icon.png",
+  "author": "anh",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "translate-json-selection",
+      "title": "Translate JSON Selection",
+      "description": "Translates the selected JSON key-value to other languages.",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "localesPath",
+      "description": "Absolute path to the folder containing your locale JSON files (e.g. /Users/anh/Projects/my-app/locales)",
+      "type": "directory",
+      "required": true,
+      "title": "Locales Directory"
+    },
+    {
+      "name": "sourceLang",
+      "description": "Source language code (filename without extension, e.g. 'en')",
+      "type": "textfield",
+      "required": true,
+      "title": "Source Language",
+      "default": "en"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.0",
+    "@raycast/utils": "^1.19.0",
+    "google-translate-api-x": "^10.7.2"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.13.0",
+    "@types/react": "19.0.8",
+    "eslint": "^8.57.0",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "build": "ray build --output dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
